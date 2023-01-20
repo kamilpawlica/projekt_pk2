@@ -4,10 +4,10 @@
 
 int main()
 {
-    Game* game = new Game();
+    Game::GetInstance()->StartGame();
 
-    game->StartGame();
-
-    delete game;
+    //Game* obiekt = Game::GetInstance();
+    //obiekt->SetTitle("Sokoban Game Project");
+    //Game::GetInstance()->SetResolution(400, 400);
     return 0;
 }
