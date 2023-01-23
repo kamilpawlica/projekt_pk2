@@ -1,4 +1,5 @@
 #include <SFML/Graphics.hpp>
+#include "MainRoom.h"
 class Game
 {
 public:
@@ -10,6 +11,10 @@ public:
 	void StartGame();
 	static Game* GetInstance();
 	sf::RenderWindow* GetWindow();
+	MainRoom * GetCurrentRoom();
+
+	void ChangeRoom(MainRoom* NewRoom);
+
 	void SetResolution(int width, int height);
 	sf::Vector2u GetWindowResolution();
 
@@ -18,9 +23,12 @@ public:
 
 private:
 	Game();
+	void SprawdzZmianeRoom();
 	int width, height; //rozdzielczosc
 	std::string Title; //tytul okna
 	sf::RenderWindow * Window;
-	sf::CircleShape Shape;
+	
+	MainRoom* CurrentRoom;
+	MainRoom* NextRoom;
 	static Game* Instance;
 };
