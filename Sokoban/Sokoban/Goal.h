@@ -4,5 +4,5 @@
 class Goal : public Object
 {
 public:
-	Goal(int x,int y);
+	Goal(float x,float y);
 };

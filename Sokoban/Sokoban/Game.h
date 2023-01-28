@@ -21,6 +21,7 @@ public:
 	void SetTitle(const std::string& text);
 	std::string GetTitle();
 
+	void QuitGame();
 private:
 	Game();
 	void SprawdzZmianeRoom();

@@ -1,9 +1,8 @@
 #pragma once
-#include "Object.h"
-#include "SFML/Graphics.hpp"
-class Box :public Object
+#include "SolidObject.h"
+class Box :public SolidObject
 {
 public:
-	Box(int x, int y);
+	Box(float x, float y);
 	
 };

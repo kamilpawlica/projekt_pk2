@@ -6,11 +6,15 @@
 #include <fstream>
 #include <string>
 #include <iostream>
+#include "MainMenuBackground.h"
 using namespace std;
-Level::Level() : MainRoom()
+Level::Level(const string& filename, int levelNumber) : MainRoom(),LevelNumber(levelNumber)
 {
-	int x, y;
-	ifstream file("Level1.txt");
+	float x, y;
+	//InstanceCreate(new Tileset(0, 0));
+
+	
+	ifstream file(filename);
 	if (file.fail())
 	{
 		cout << "Zly plik!!!";
@@ -39,5 +43,5 @@ Level::Level() : MainRoom()
 	}
 
 	file.close();
-
+	
 }

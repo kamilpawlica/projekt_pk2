@@ -1,8 +1,8 @@
 #pragma once
-#include "Object.h"
+#include "SolidObject.h"
 
-class Wall : public Object
+class Wall : public SolidObject
 {
 public:
-	Wall(int x, int y);
+	Wall(float x, float y);
 };

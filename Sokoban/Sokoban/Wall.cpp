@@ -1,4 +1,4 @@
 #include "Wall.h"
 
-Wall::Wall(int x, int y) : Object(x, y, "wall") {}
+Wall::Wall(float x, float y) : SolidObject(x, y, "wall") {}
 

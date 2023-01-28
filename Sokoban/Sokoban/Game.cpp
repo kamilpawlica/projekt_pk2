@@ -5,6 +5,10 @@
 #include "GameIni.h"
 
 Game* Game::Instance = nullptr;
+void Game::QuitGame()
+{
+    exit(0);
+}
 Game::Game() //def konstruktora
     :width(1280),
     height(720),
