@@ -7,7 +7,7 @@ using namespace std;
 class Object
 {
 public:
-	Object(float x, float y , const string &resource = "", int horizontalFrames = 1, int verticalFrames = 1);
+	Object(float x, float y, const string& resource = "", int horizontalFrames = 1, int verticalFrames = 1);
 
 	virtual ~Object();
 
@@ -38,7 +38,7 @@ public:
 	void SetVisible(bool visible);
 
 	float Depth();
-	void SetDepth(float depth); 
+	void SetDepth(float depth);
 
 	int Alarm(int alarm);
 	void SetAlarm(int alarm, int value);
