@@ -1,7 +1,6 @@
 #pragma once
 //Klasa bazowa dla wszystkich objektow w calej grze
-using namespace std;
-#include <string>
+	
 #include <SFML/Graphics.hpp>
 class Object
 {
@@ -12,6 +11,8 @@ public:
 
 	virtual void Step();
 	virtual void Draw();
+
+	sf::Sprite* GetSprite();
 
 	float X();
 	void SetX(float x);
@@ -64,7 +65,10 @@ public:
 
 	bool IsNajechane(int x, int y);
 
-	sf::Sprite* GetSprite();
+	template <typename T>
+	std::vector<T> GetAllGameObjectsAtPosition(float x, float y);
+	
+	
 private:
 	sf::Sprite* Sprite;
 	sf::Vector2f StartPosition;
@@ -78,3 +82,9 @@ private:
 	float Image_Index;
 	float Image_Speed;
 };
+
+template<typename T>
+inline std::vector<T> Object::GetAllGameObjectsAtPosition(float x, float y)
+{
+	return ::Game::GetInstance()->GetCurrentRoom()->GetAllGameObjectsAtPosition<T>(x,y);
+}

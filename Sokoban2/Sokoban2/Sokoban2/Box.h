@@ -1,9 +1,10 @@
 #pragma once
-#include "Object.h"
+#include "SolidObject.h"
 #include "SFML/Graphics.hpp"
-class Box :public Object
+class Box :public SolidObject
 {
 public:
 	Box(float x, float y);
 
+	virtual void OnAlarm(int alarm);
 };

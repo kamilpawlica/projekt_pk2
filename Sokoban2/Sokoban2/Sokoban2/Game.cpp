@@ -3,6 +3,7 @@
 #include "Mouseconf.h"
 #include "GameIni.h"
 
+
 Game* Game::Instance = nullptr;
 void Game::QuitGame()
 {

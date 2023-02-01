@@ -1,7 +1,7 @@
 #pragma once
-#include "Object.h"
+#include "SolidObject.h"
 
-class Wall : public Object
+class Wall : public SolidObject
 {
 public:
 	Wall(float x, float y);

@@ -15,12 +15,12 @@
 
 	void PlayLevel2()
 	{
-		Game::GetInstance()->GetCurrentRoom()->ChangeRoom(new Level("Level1.txt", 1));
+		Game::GetInstance()->GetCurrentRoom()->ChangeRoom(new Level("Level2.txt", 1));
 	}
 
 	void PlayLevel3()
 	{
-		Game::GetInstance()->GetCurrentRoom()->ChangeRoom(new Level("Level1.txt", 1));
+		Game::GetInstance()->GetCurrentRoom()->ChangeRoom(new Level("Level3.txt", 1));
 	}
 	MainMenuRoom::MainMenuRoom() : MainRoom()
 {
