@@ -1,10 +1,28 @@
 #include "Button.h"
 #include "Mouseconf.h"
-Button::Button(	float x,float y,const std::string& resource, void (*callback)())
-	: Object(x,y, resource, 2,1),
-	Callback(callback)
+#include "Font.h"
+Button::Button(
+	float x,
+	float y,
+	const std::string& spriteResource,
+	void (*callback)(),
+	const std::string& text,
+	sf::Color off_color,
+	sf::Color on_color,
+	const std::string& fontResource)
+
+	: Object(x, y, spriteResource, 2, 1),
+	Callback(callback),
+	Fontxd(new Font(fontResource)),
+	Text(text),
+	OffColor(off_color),
+	OnColor(on_color)
+
+{}
+
+Button::~Button()
 {
-	SetImageSpeed(0.1f);
+	delete Fontxd; //delete pointera
 }
 
 void Button::Step()
@@ -19,4 +37,11 @@ void Button::Step()
 			Callback();
 		}
 	}
+}
+
+void Button::Draw()
+{
+	Object::Draw();
+	sf::Color DrawColor = (ImageIndex() == 0) ? OffColor : OnColor; //jezeli imgindex 0, wez offcolor
+	Fontxd->Print(X() + 10, Y() + 10, Text, DrawColor, 2, 2);
 }

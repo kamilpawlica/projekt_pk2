@@ -1,12 +1,12 @@
 #include "GameIni.h"
 #include "Texture.h"
-#include "Level.h"
 #include "MainMenuRoom.h"
 
 //Pierwszy room
 //tworzenie wskaznika, przekazanie go i push do wektora
 GameIni::GameIni()
 {
+	Texture::GetInstance()->AddTexture("font", "font.png");
 	Texture::GetInstance()->AddTexture("box", "box.png");
 	Texture::GetInstance()->AddTexture("goal", "goal.png");
 	Texture::GetInstance()->AddTexture("wall", "wall.png");
@@ -18,6 +18,6 @@ GameIni::GameIni()
 
 void GameIni::Step()
 {
-	ChangeRoom(new MainMenuRoom());
 	//ChangeRoom(new Level("Level1.txt", 1));
+	ChangeRoom(new MainMenuRoom());
 }
