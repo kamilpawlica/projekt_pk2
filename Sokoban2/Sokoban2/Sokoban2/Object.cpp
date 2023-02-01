@@ -1,15 +1,20 @@
 #include "Object.h"
 #include "Texture.h"
 #include "Game.h"
+#include <iostream>
 using namespace std;
-Object::Object(float x, float y, const string& resource) :
+Object::Object(float x, float y, const std::string& resource, int horizontalFrames, int verticalFrames) :
 	Sprite(new sf::Sprite()),
 	StartPosition(x, y),
 	PreviousPosition(x, y),
 	IsVisible(true),
 	DepthVal(0.0f),
 	Alarms(5, -1), //5 alarmow, 0 - 4, kazdy -1
-	SpeedVector(0.0f, 0.0f)
+	SpeedVector(0.0f, 0.0f),
+	HorizontalFrames(horizontalFrames),
+	VerticalFrames(verticalFrames),
+	Image_Index(0),
+	Image_Speed(0)
 {
 	if (resource != "")
 	{
@@ -27,10 +32,12 @@ Object::~Object()
 
 void Object::Step()
 {
+	//Animations
+	SetImageIndex(ImageIndex() + ImageSpeed());
 	//Speed
 	Sprite->setPosition(Sprite->getPosition() + SpeedVector);
 	//Alarmy
-	for (int i = 0; i < Alarms.size(); ++i)
+	for (std::size_t i = 0; i < Alarms.size(); ++i)
 	{
 		if (Alarms[i] > 0)
 		{
@@ -50,7 +57,11 @@ void Object::Draw()
 	{
 		if (IsVisible == true)
 		{
+			int x = static_cast<int>(ImageIndex()) % HorizontalFrames; //0 mod 40 = 0, 39 mod 40 = 39 itd, "iterowanie" po wwierrszach
+			int y = static_cast<int>(ImageIndex()) / HorizontalFrames;
+			Sprite->setTextureRect(sf::IntRect(x * SpriteWidth(), y * SpriteHeight(), SpriteWidth(), SpriteHeight())); //1 obrazek z tileset
 			Game::GetInstance()->GetWindow()->draw(*Sprite);
+			cout << x << " " << y << endl;
 		}
 	}
 }
@@ -204,4 +215,54 @@ void Object::SetDirection(float direction)
 	float radians = direction * 3.14 / 180.0f;
 	float speed = Speed();
 	SpeedVector = sf::Vector2f(speed * cos(radians), -speed * sin(radians));
+}
+
+float Object::ImageIndex()
+{
+	return Image_Index;
+}
+
+void Object::SetImageIndex(float value)
+{
+	value = fmod(value, HorizontalFrames * VerticalFrames);
+	if (value < 0)
+	{
+		value += (HorizontalFrames * VerticalFrames);
+	}
+	Image_Index = value;
+}
+
+float Object::ImageSpeed()
+{
+	return Image_Speed;
+}
+
+void Object::SetImageSpeed(float value)
+{
+	Image_Speed = value;
+}
+
+int Object::SpriteWidth()
+{
+	return Sprite->getTexture()->getSize().x / HorizontalFrames; //640/40
+}
+
+int Object::SpriteHeight()
+{
+	return Sprite->getTexture()->getSize().y / VerticalFrames;
+}
+
+bool Object::IsNajechane(int x, int y)
+{
+	if ((x >= Sprite->getPosition().x) &&
+		(x < Sprite->getPosition().x + SpriteWidth()) &&
+		(y >= Sprite->getPosition().y) &&
+		(y < Sprite->getPosition().y + SpriteHeight()))
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }

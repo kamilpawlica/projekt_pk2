@@ -1,5 +1,7 @@
 #include "Character.h"
 #include "Keyboardconf.h"
+#include "Game.h"
+#include "MainMenuRoom.h"
 Character::Character(float x, float y) : Object(x, y, "character") 
 {
 	SetSpeed(1.0f);
@@ -10,9 +12,9 @@ void Character::Step()
 
 	Object::Step();
 
-	if (Keyboardconf::GetInstance()->NacisnietyKey(sf::Keyboard::Right))
+	if (Keyboardconf::GetInstance()->NacisnietyKey(sf::Keyboard::Escape))
 	{
-		SetDirection(Direction() - 1);
+		Game::GetInstance()->GetCurrentRoom()->ChangeRoom(new MainMenuRoom());
 	}
 
 	if (Keyboardconf::GetInstance()->NacisnietyKey(sf::Keyboard::Left))

@@ -3,6 +3,7 @@
 #include "Character.h"
 #include "Wall.h"
 #include "Goal.h"
+#include "MainMenuBackground.h"
 #include <fstream>
 #include <string>
 #include <iostream>
@@ -10,6 +11,7 @@ using namespace std;
 Level::Level(const string& filename, int levelNumber) : MainRoom(), LevelNumber(levelNumber)
 {
 	float x, y;
+	
 	ifstream file(filename);
 	if (file.fail())
 	{
@@ -39,5 +41,5 @@ Level::Level(const string& filename, int levelNumber) : MainRoom(), LevelNumber(
 	}
 
 	file.close();
-
+	
 }

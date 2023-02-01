@@ -6,7 +6,7 @@ using namespace std;
 class Object
 {
 public:
-	Object(float x, float y, const string& resource = "");
+	Object(float x, float y, const std::string& resource = "", int horizontalFrames = 1, int verticalFrames = 1);
 
 	virtual ~Object();
 
@@ -53,6 +53,17 @@ public:
 	float Direction();
 	void SetDirection(float direction);
 
+	float ImageIndex();
+	void SetImageIndex(float value);
+
+	float ImageSpeed();
+	void SetImageSpeed(float value);
+
+	int SpriteWidth();
+	int SpriteHeight();
+
+	bool IsNajechane(int x, int y);
+
 	sf::Sprite* GetSprite();
 private:
 	sf::Sprite* Sprite;
@@ -62,4 +73,8 @@ private:
 	float DepthVal;
 	std::vector<int> Alarms;
 	sf::Vector2f SpeedVector;
+	int HorizontalFrames;
+	int VerticalFrames;
+	float Image_Index;
+	float Image_Speed;
 };
