@@ -1,5 +1,7 @@
 #include "MainRoom.h"
 #include "Game.h"
+#include <SFML/Graphics.hpp>
+#include <iostream>
 MainRoom::MainRoom(): Obiekty(){}
 
 MainRoom::~MainRoom()

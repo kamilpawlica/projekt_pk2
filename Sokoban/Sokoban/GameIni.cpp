@@ -1,7 +1,8 @@
 #include "GameIni.h"
 #include "Texture.h"
 #include "MainMenuRoom.h"
-
+#include <SFML/Graphics.hpp>
+#include <iostream>
 //Pierwszy room
 //tworzenie wskaznika, przekazanie go i push do wektora
 GameIni::GameIni() 

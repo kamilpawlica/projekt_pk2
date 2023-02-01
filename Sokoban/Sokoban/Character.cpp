@@ -3,6 +3,8 @@
 #include "Game.h"
 #include "MainMenuRoom.h"
 #include "SolidObject.h"
+#include <SFML/Graphics.hpp>
+#include <iostream>
 Character::Character(float x, float y) : Object(x, y, "character") {}
 
 void Character::Step()
@@ -18,15 +20,10 @@ void Character::Step()
 
 	if (Keyboardconf::GetInstance()->NacisnietyKey(sf::Keyboard::Right))
 	{
-		//std::vector<SolidObject*> solids = GetAllGameObjectsAtPosition<SolidObject*>(X()+SpriteWidth(), Y());
-		//if (solids.empty() == true)
-		//{
 			SetSpeed(6);
 			SetDirection(0);
 			SetAlarm(0, 10);
-		//}
 	}
-
 
 }
 

@@ -4,5 +4,5 @@
 class Wall : public Object
 {
 public:
-	Wall(int x, int y);
+	Wall(float x, float y);
 };

@@ -1,3 +1,3 @@
 #include "Goal.h"
 
-Goal::Goal(int x, int y) : Object(x, y, "goal") {}
+Goal::Goal(float x, float y) : Object(x, y, "goal") {}

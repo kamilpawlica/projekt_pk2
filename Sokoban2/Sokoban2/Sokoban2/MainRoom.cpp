@@ -22,8 +22,17 @@ void MainRoom::Step()
 
 }
 
+// sprawdzanie ktorego wskaznika Depth jest mniejszy
+bool LessThanOperator(Object* lhs, Object* rhs)
+{
+	return lhs->Depth() < rhs->Depth();
+}
+
 void MainRoom::Draw()
 {
+	//algorytm sortowania obiektow po LessThanOperator
+	std::sort(Obiekty.begin(), Obiekty.end(), LessThanOperator);
+
 	for (Object* i : Obiekty)
 	{
 		i->Draw();

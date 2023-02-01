@@ -1,6 +1,8 @@
 #pragma once
 #include "Object.h"
 #include "Font.h"
+#include <SFML/Graphics.hpp>
+#include <iostream>
 class Button : public Object
 {
 public:

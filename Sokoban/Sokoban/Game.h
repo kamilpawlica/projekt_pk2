@@ -1,4 +1,6 @@
+#pragma once
 #include <SFML/Graphics.hpp>
+#include <iostream>
 #include "MainRoom.h"
 class Game
 {
@@ -14,20 +16,20 @@ public:
 	MainRoom * GetCurrentRoom();
 
 	void ChangeRoom(MainRoom* NewRoom);
-
+	/*
 	void SetResolution(int width, int height);
 	sf::Vector2u GetWindowResolution();
 
 	void SetTitle(const std::string& text);
 	std::string GetTitle();
-
+	*/
 	void QuitGame();
 private:
 	Game();
 	void SprawdzZmianeRoom();
 	int width, height; //rozdzielczosc
 	std::string Title; //tytul okna
-	sf::RenderWindow * Window;
+	sf::RenderWindow* Window;
 	
 	MainRoom* CurrentRoom;
 	MainRoom* NextRoom;

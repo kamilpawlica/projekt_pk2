@@ -7,6 +7,7 @@
 #include <string>
 #include <iostream>
 #include "MainMenuBackground.h"
+#include <SFML/Graphics.hpp>
 using namespace std;
 Level::Level(const string& filename, int levelNumber) : MainRoom(),LevelNumber(levelNumber)
 {

@@ -7,10 +7,10 @@
 #include <string>
 #include <iostream>
 using namespace std;
-Level::Level() : MainRoom()
+Level::Level(const string& filename, int levelNumber) : MainRoom(), LevelNumber(levelNumber)
 {
-	int x, y;
-	ifstream file("Level1.txt");
+	float x, y;
+	ifstream file(filename);
 	if (file.fail())
 	{
 		cout << "Zly plik!!!";

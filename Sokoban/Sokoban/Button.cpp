@@ -1,6 +1,8 @@
 #include "Button.h"
 #include "Mouseconf.h"
 #include "Font.h"
+#include <SFML/Graphics.hpp>
+#include <iostream>
 Button::Button(
 	float x, 
 	float y, 
@@ -43,5 +45,5 @@ void Button::Draw()
 {
 	Object::Draw();
 	sf::Color DrawColor = (ImageIndex() == 0) ? OffColor : OnColor; //jezeli imgindex 0, wez offcolor
-	Fontxd->Print(X() + 10, Y() + 10, Text, DrawColor, 2, 2);
+	Fontxd->Print(X() + 10.0f, Y() + 10.0f, Text, DrawColor, 2, 2);
 }

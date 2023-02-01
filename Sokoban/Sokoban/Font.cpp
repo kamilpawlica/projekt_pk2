@@ -1,6 +1,7 @@
 #include "Font.h"
 #include "Game.h"
-
+#include <SFML/Graphics.hpp>
+#include <iostream>
 Font::Font(const std::string& resource)
 	: Object(0,0,resource,16,16)
 {}

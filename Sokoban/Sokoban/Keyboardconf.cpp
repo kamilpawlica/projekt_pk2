@@ -1,5 +1,6 @@
 #include "Keyboardconf.h"
-
+#include <SFML/Graphics.hpp>
+#include <iostream>
 Keyboardconf* Keyboardconf::Instance = nullptr;
 
 Keyboardconf::Keyboardconf()

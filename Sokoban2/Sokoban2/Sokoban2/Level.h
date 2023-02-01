@@ -4,5 +4,7 @@
 class Level : public MainRoom
 {
 public:
-	Level();
+	Level(const std::string& filename, int levelNumber);
+private:
+	int LevelNumber;
 };

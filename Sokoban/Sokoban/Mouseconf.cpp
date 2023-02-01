@@ -1,5 +1,7 @@
 #include "Mouseconf.h"
 #include "Game.h"
+#include <SFML/Graphics.hpp>
+#include <iostream>
 Mouseconf* Mouseconf::Instance = nullptr;
 
 Mouseconf::Mouseconf()

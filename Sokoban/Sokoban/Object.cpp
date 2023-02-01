@@ -2,6 +2,7 @@
 #include "Texture.h"
 #include "Game.h"
 #include <iostream>
+#include <SFML/Graphics.hpp>
 using namespace std;
 Object::Object(float x,float y, const string& resource, int horizontalFrames, int verticalFrames) : Sprite(new sf::Sprite()),
 StartPosition(x, y), 

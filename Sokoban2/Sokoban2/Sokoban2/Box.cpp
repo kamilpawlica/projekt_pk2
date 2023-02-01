@@ -1,4 +1,4 @@
 #include "Box.h"
 #include "Game.h"
 
-Box::Box(int x, int y) : Object(x, y, "box") {}
+Box::Box(float x, float y) : Object(x, y, "box") {}

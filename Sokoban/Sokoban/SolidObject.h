@@ -1,6 +1,7 @@
 #pragma once
 #include "Object.h"
-
+#include <SFML/Graphics.hpp>
+#include <iostream>
 class SolidObject : public Object
 {
 public:

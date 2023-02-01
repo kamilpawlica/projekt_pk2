@@ -4,5 +4,7 @@
 class Character : public Object
 {
 public:
-	Character(int x, int y);
+	Character(float x, float y);
+	virtual void Step() override;
+	virtual void OnAlarm(int alarm) override;
 };

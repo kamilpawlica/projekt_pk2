@@ -3,6 +3,8 @@
 #include "Button.h"
 #include "Game.h"
 #include "Level.h"
+#include <SFML/Graphics.hpp>
+#include <iostream>
 void QuitGame()
 {
 	Game::GetInstance()->QuitGame();

@@ -1,6 +1,7 @@
 #pragma once
 //Klasa bazowa dla wszystkich objektow w calej grze
 using namespace std;
+#include <vector>
 #include <string>
 #include <SFML/Graphics.hpp>
 #include "Game.h"
@@ -67,8 +68,6 @@ public:
 
 	bool IsNajechane(int x, int y);
 
-	//template <typename T> //typ T
-	//std::vector<T> GetAllGameObjectsAtPosition(float x, float y); //szukanie obiektow wskazanego typu
 
 private:
 	sf::Sprite* Sprite;
@@ -83,10 +82,3 @@ private:
 	float Image_Index;
 	float Image_Speed;
 };
-/*
-template<typename T>
-inline std::vector<T> Object::GetAllGameObjectsAtPosition(float x, float y)
-{
-	return Game::GetInstance()->GetCurrentRoom()->GetAllGameObjectsAtPosition<T>(x, y);
-}
-*/

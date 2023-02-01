@@ -3,7 +3,7 @@
 #include "Keyboardconf.h"
 #include "Mouseconf.h"
 #include "GameIni.h"
-
+#include <SFML/Graphics.hpp>
 Game* Game::Instance = nullptr;
 void Game::QuitGame()
 {

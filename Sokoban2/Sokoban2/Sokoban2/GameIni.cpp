@@ -15,5 +15,5 @@ GameIni::GameIni()
 
 void GameIni::Step()
 {
-	ChangeRoom(new Level());
+	ChangeRoom(new Level("Level1.txt", 1));
 }
