@@ -30,7 +30,7 @@ inline std::vector<T> MainRoom::GetAllGameObjectsAtPosition(float x, float y)
 	for (Object* i : Obiekty)
 	{
 		T cast = dynamic_cast<T>(i);
-		if (cast != nullptr);
+		if (cast != nullptr)
 		{
 			if (i->IsNajechane(x, y) == true)
 			{

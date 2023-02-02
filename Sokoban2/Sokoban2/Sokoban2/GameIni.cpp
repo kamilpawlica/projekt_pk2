@@ -10,11 +10,10 @@ GameIni::GameIni()
 	Texture::GetInstance()->AddTexture("box", "box.png");
 	Texture::GetInstance()->AddTexture("goal", "goal.png");
 	Texture::GetInstance()->AddTexture("wall", "wall.png");
-	//Texture::GetInstance()->AddTexture("character_left", "character_left.png");
-	//Texture::GetInstance()->AddTexture("character_up", "character_up.png");
-	//Texture::GetInstance()->AddTexture("character_right", "character_right.png");
-	//Texture::GetInstance()->AddTexture("character_down", "character_down.png");
-	Texture::GetInstance()->AddTexture("character", "character.png");
+	Texture::GetInstance()->AddTexture("character_left", "character_left.png");
+	Texture::GetInstance()->AddTexture("character_up", "character_up.png");
+	Texture::GetInstance()->AddTexture("character_right", "character_right.png");
+	Texture::GetInstance()->AddTexture("character_down", "character_down.png");
 	Texture::GetInstance()->AddTexture("menu", "menu.png");
 	Texture::GetInstance()->AddTexture("menu_button", "menu_button.png");
 

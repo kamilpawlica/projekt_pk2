@@ -86,5 +86,5 @@ private:
 template<typename T>
 inline std::vector<T> Object::GetAllGameObjectsAtPosition(float x, float y)
 {
-	return ::Game::GetInstance()->GetCurrentRoom()->GetAllGameObjectsAtPosition<T>(x,y);
+	return ::Game::GetInstance()->GetCurrentRoom()->GetAllGameObjectsAtPosition<T>(x, y);
 }
